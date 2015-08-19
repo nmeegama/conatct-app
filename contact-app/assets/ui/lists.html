@@ -1,0 +1,50 @@
+
+<div class="well" style="margin-top: 100px; overflow: hidden;">
+
+
+
+<h2 style="margin-top: -7%; margin-bottom: 6%;">Contact Finder</h2>
+
+
+<input type="text" ng-model="yourName" placeholder="Search contact ..." style="margin-bottom: 2%" />
+<!--<input type="text" value="{{yourName}}" style="margin-bottom: 2%" />-->
+<!--<input ng-controller="Simple" type="text" value="{{simple}}" style="margin-bottom: 2%" />-->
+
+
+
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+    	
+      <th>Contact Nameee</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>Edit</th>
+      
+      
+    </tr>
+  </thead>
+  
+  <tbody>
+
+    <tr class="animate" ng-repeat="contact in contacts | limitTo:20 | filter : yourName">
+    	
+
+      <td>{{contact.name}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.phone}}</td>
+
+
+      <td><a href="#/edit/{{contact.id}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+  	  
+    
+      
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" href="#/add-contact">Add New contact</a>
+
+	<div ></div>
+	
+</div>

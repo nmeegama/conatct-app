@@ -1,0 +1,42 @@
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<div class="well" style="margin-top: 100px; overflow: hidden;" style="background-color: rgba(255, 255, 255, 0.46);">
+<h2 style="margin-top: -7%; margin-bottom: 6%;">Edit Contact</h2>
+<div class="row">
+  <div class="col-md-6">
+  
+  <form novalidate ng-repeat="contact in contact" name="AddNewForm" id="add-new-form" method="post" action="">
+    
+    <input type="hidden" ng-model="contact.id" value="{{contact.id}}" />
+
+    <div class="form-group">
+      <label for="name">Contact Name:</label>
+      <input class="form-control" type="text" ng-model="contact.name" value="{{contact.name}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="home_banner">Contact Address:</label>
+      <input class="form-control" type="text" ng-model="contact.address" value="{{contact.address}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="promotion_banner">Contact Email:</label>
+      <input class="form-control" type="text" ng-model="contact.email" value="{{contact.email}}" required />
+    </div>
+
+    <div class="form-group">
+      <label for="type">Contact Telephone:</label>
+      <input class="form-control" type="text" ng-model="contact.phone" value="{{contact.phone}}" />
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(contact)" id="add-new-btn" ng-click="update(contact)">Update <span class="glyphicon glyphicon-floppy-disk"></span></button>
+
+    <button class="btn btn-danger" ng-click="delete(contact)">Delete<span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/" class="btn">Cancel</a>
+
+  </form>
+
+</div>
+</div>
+</div>
